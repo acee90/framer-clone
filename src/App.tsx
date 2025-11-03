@@ -10,7 +10,7 @@ function App() {
 			{/* Main Content */}
 			<main className="flex-1">
 				{/* Hero Section */}
-				<section className="container py-24 md:py-32">
+				<section className="container mx-auto py-24 md:py-32">
 					<div className="mx-auto max-w-4xl text-center">
 						<h1 className="mb-6 text-5xl font-bold tracking-tight md:text-7xl">
 							Design and ship your dream site
@@ -32,7 +32,7 @@ function App() {
 
 				{/* Features Section */}
 				<section className="border-t bg-muted/50 py-24">
-					<div className="container">
+					<div className="container mx-auto">
 						<div className="mx-auto max-w-3xl text-center">
 							<h2 className="mb-4 text-4xl font-bold tracking-tight">
 								Everything you need to build a site
@@ -93,7 +93,7 @@ function App() {
 
 				{/* CTA Section */}
 				<section className="border-t py-24">
-					<div className="container">
+					<div className="container mx-auto">
 						<div className="mx-auto max-w-3xl text-center">
 							<h2 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
 								Start building today

@@ -1,11 +1,21 @@
-import { Menu } from "lucide-react";
+import {
+	Database,
+	Menu,
+	Palette,
+	Rocket,
+	Search,
+	Sparkles,
+	Users,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+	NavigationMenu,
+	NavigationMenuContent,
+	NavigationMenuItem,
+	NavigationMenuLink,
+	NavigationMenuList,
+	NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 import {
 	Sheet,
 	SheetContent,
@@ -13,56 +23,123 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
+
+interface MenuItem {
+	title: string;
+	href: string;
+	subitems?: {
+		title: string;
+		href: string;
+		description?: string;
+		icon?: React.ComponentType<{ className?: string }>;
+		badge?: string;
+	}[];
+}
+
+const menuItems: MenuItem[] = [
+	{
+		title: "Product",
+		href: "#",
+		subitems: [
+			{
+				title: "AI",
+				href: "#",
+				description: "Set your ideas free",
+				icon: Sparkles,
+			},
+			{
+				title: "Design",
+				href: "#",
+				description: "Create stunning designs",
+				icon: Palette,
+			},
+			{
+				title: "Collaborate",
+				href: "#",
+				description: "Work together seamlessly",
+				icon: Users,
+			},
+			{
+				title: "CMS",
+				href: "#",
+				description: "Manage your content easily",
+				icon: Database,
+			},
+			{
+				title: "Publish",
+				href: "#",
+				description: "Share your work with the world",
+				icon: Rocket,
+			},
+			{
+				title: "SEO",
+				href: "#",
+				description: "Optimize your site for search engines",
+				icon: Search,
+			},
+		],
+	},
+];
 
 export function Navbar() {
 	return (
-		<nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-			<div className="container flex h-16 items-center justify-between">
+		<nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
+			<div className="container mx-auto flex h-16 items-center justify-between relative">
 				{/* Logo */}
 				<div className="flex items-center gap-8">
 					<a href="/" className="flex items-center space-x-2">
-						<div className="h-8 w-8 rounded-lg bg-gradient-to-br from-purple-600 to-blue-600" />
+						<div className="h-8 w-8 rounded-lg bg-linear-to-br from-purple-600 to-blue-600" />
 						<span className="text-xl font-bold">Framer</span>
 					</a>
 
 					{/* Desktop Navigation */}
-					<div className="hidden items-center gap-6 md:flex">
-						<DropdownMenu>
-							<DropdownMenuTrigger className="text-sm font-medium transition-colors hover:text-foreground/80">
-								Product
-							</DropdownMenuTrigger>
-							<DropdownMenuContent align="start">
-								<DropdownMenuItem>Design</DropdownMenuItem>
-								<DropdownMenuItem>Prototype</DropdownMenuItem>
-								<DropdownMenuItem>Collaborate</DropdownMenuItem>
-								<DropdownMenuItem>Publish</DropdownMenuItem>
-							</DropdownMenuContent>
-						</DropdownMenu>
-
-						<DropdownMenu>
-							<DropdownMenuTrigger className="text-sm font-medium transition-colors hover:text-foreground/80">
-								Features
-							</DropdownMenuTrigger>
-							<DropdownMenuContent align="start">
-								<DropdownMenuItem>Animations</DropdownMenuItem>
-								<DropdownMenuItem>Components</DropdownMenuItem>
-								<DropdownMenuItem>CMS</DropdownMenuItem>
-								<DropdownMenuItem>SEO</DropdownMenuItem>
-							</DropdownMenuContent>
-						</DropdownMenu>
-
-						<DropdownMenu>
-							<DropdownMenuTrigger className="text-sm font-medium transition-colors hover:text-foreground/80">
-								Resources
-							</DropdownMenuTrigger>
-							<DropdownMenuContent align="start">
-								<DropdownMenuItem>Documentation</DropdownMenuItem>
-								<DropdownMenuItem>Learn</DropdownMenuItem>
-								<DropdownMenuItem>Community</DropdownMenuItem>
-								<DropdownMenuItem>Templates</DropdownMenuItem>
-							</DropdownMenuContent>
-						</DropdownMenu>
-					</div>
+					<NavigationMenu className="absolute hidden md:flex left-1/2 transform -translate-x-1/2">
+						<NavigationMenuList>
+							{menuItems.map((item) => (
+								<NavigationMenuItem key={item.title}>
+									<NavigationMenuTrigger className="text-sm font-medium">
+										{item.title}
+									</NavigationMenuTrigger>
+									<NavigationMenuContent>
+										<ul className="grid w-[220px] gap-3 p-4 grid-cols-1">
+											{item.subitems?.map((subitem) => {
+												const Icon = subitem.icon;
+												return (
+													<li key={subitem.title}>
+														<NavigationMenuLink asChild>
+															<a
+																href={subitem.href}
+																className={cn(
+																	"block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+																)}
+															>
+																<div className="flex items-center gap-3">
+																	{Icon && (
+																		<div className="rounded-sm bg-gray-500 flex items-center justify-center p-4 w-10 h-10">
+																			<Icon className="h-5 w-5 mt-0.5 shrink-0" />
+																		</div>
+																	)}
+																	<div className="flex flex-col gap-1 flex-1">
+																		<div className="text-sm font-medium leading-none">
+																			{subitem.title}
+																		</div>
+																		<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+																			{subitem.description}
+																		</p>
+																	</div>
+																</div>
+															</a>
+														</NavigationMenuLink>
+													</li>
+												);
+											})}
+										</ul>
+									</NavigationMenuContent>
+								</NavigationMenuItem>
+							))}
+						</NavigationMenuList>
+					</NavigationMenu>
 				</div>
 
 				{/* Right side */}

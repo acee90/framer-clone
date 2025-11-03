@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx shadcn@latest add dropdown-menu)",
+      "Bash(npx shadcn@latest add sheet)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
