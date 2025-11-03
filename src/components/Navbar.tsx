@@ -85,24 +85,24 @@ const menuItems: MenuItem[] = [
 export function Navbar() {
 	return (
 		<nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
-			<div className="container mx-auto flex h-16 items-center justify-between relative">
+			<div className="container relative mx-auto flex h-16 items-center justify-between">
 				{/* Logo */}
 				<div className="flex items-center gap-8">
 					<a href="/" className="flex items-center space-x-2">
 						<div className="h-8 w-8 rounded-lg bg-linear-to-br from-purple-600 to-blue-600" />
-						<span className="text-xl font-bold">Framer</span>
+						<span className="font-bold text-xl">Framer</span>
 					</a>
 
 					{/* Desktop Navigation */}
-					<NavigationMenu className="absolute hidden md:flex left-1/2 transform -translate-x-1/2">
+					<NavigationMenu className="-translate-x-1/2 absolute left-1/2 hidden transform md:flex">
 						<NavigationMenuList>
 							{menuItems.map((item) => (
 								<NavigationMenuItem key={item.title}>
-									<NavigationMenuTrigger className="text-sm font-medium">
+									<NavigationMenuTrigger className="font-medium text-sm">
 										{item.title}
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
-										<ul className="grid w-[220px] gap-3 p-4 grid-cols-1">
+										<ul className="grid w-[260px] grid-cols-1 gap-3">
 											{item.subitems?.map((subitem) => {
 												const Icon = subitem.icon;
 												return (
@@ -110,21 +110,19 @@ export function Navbar() {
 														<NavigationMenuLink asChild>
 															<a
 																href={subitem.href}
-																className={cn(
-																	"block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-																)}
+																className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors"
 															>
 																<div className="flex items-center gap-3">
 																	{Icon && (
-																		<div className="rounded-sm bg-gray-500 flex items-center justify-center p-4 w-10 h-10">
-																			<Icon className="h-5 w-5 mt-0.5 shrink-0" />
+																		<div className="flex h-10 w-10 items-center justify-center rounded-sm bg-muted p-4 transition-colors group-hover:bg-foreground">
+																			<Icon className="mt-0.5 h-5 w-5 shrink-0 text-foreground transition-colors group-hover:text-background" />
 																		</div>
 																	)}
-																	<div className="flex flex-col gap-1 flex-1">
-																		<div className="text-sm font-medium leading-none">
+																	<div className="flex flex-1 flex-col gap-1">
+																		<div className="font-medium text-sm leading-none">
 																			{subitem.title}
 																		</div>
-																		<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+																		<p className="line-clamp-2 text-muted-foreground text-sm leading-snug transition-colors group-hover:text-foreground">
 																			{subitem.description}
 																		</p>
 																	</div>
@@ -169,48 +167,48 @@ export function Navbar() {
 							<div className="mt-8 flex flex-col gap-4">
 								<div className="flex flex-col gap-2">
 									<h3 className="font-semibold">Product</h3>
-									<a href="#" className="text-sm text-muted-foreground">
+									<a href="#" className="text-muted-foreground text-sm">
 										Design
 									</a>
-									<a href="#" className="text-sm text-muted-foreground">
+									<a href="#" className="text-muted-foreground text-sm">
 										Prototype
 									</a>
-									<a href="#" className="text-sm text-muted-foreground">
+									<a href="#" className="text-muted-foreground text-sm">
 										Collaborate
 									</a>
-									<a href="#" className="text-sm text-muted-foreground">
+									<a href="#" className="text-muted-foreground text-sm">
 										Publish
 									</a>
 								</div>
 
 								<div className="flex flex-col gap-2">
 									<h3 className="font-semibold">Features</h3>
-									<a href="#" className="text-sm text-muted-foreground">
+									<a href="#" className="text-muted-foreground text-sm">
 										Animations
 									</a>
-									<a href="#" className="text-sm text-muted-foreground">
+									<a href="#" className="text-muted-foreground text-sm">
 										Components
 									</a>
-									<a href="#" className="text-sm text-muted-foreground">
+									<a href="#" className="text-muted-foreground text-sm">
 										CMS
 									</a>
-									<a href="#" className="text-sm text-muted-foreground">
+									<a href="#" className="text-muted-foreground text-sm">
 										SEO
 									</a>
 								</div>
 
 								<div className="flex flex-col gap-2">
 									<h3 className="font-semibold">Resources</h3>
-									<a href="#" className="text-sm text-muted-foreground">
+									<a href="#" className="text-muted-foreground text-sm">
 										Documentation
 									</a>
-									<a href="#" className="text-sm text-muted-foreground">
+									<a href="#" className="text-muted-foreground text-sm">
 										Learn
 									</a>
-									<a href="#" className="text-sm text-muted-foreground">
+									<a href="#" className="text-muted-foreground text-sm">
 										Community
 									</a>
-									<a href="#" className="text-sm text-muted-foreground">
+									<a href="#" className="text-muted-foreground text-sm">
 										Templates
 									</a>
 								</div>
