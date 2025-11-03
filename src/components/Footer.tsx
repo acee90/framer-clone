@@ -10,31 +10,31 @@ export function Footer() {
 						<h3 className="font-semibold">Product</h3>
 						<a
 							href="#"
-							className="text-sm text-muted-foreground hover:text-foreground"
+							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Design
 						</a>
 						<a
 							href="#"
-							className="text-sm text-muted-foreground hover:text-foreground"
+							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Prototype
 						</a>
 						<a
 							href="#"
-							className="text-sm text-muted-foreground hover:text-foreground"
+							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Develop
 						</a>
 						<a
 							href="#"
-							className="text-sm text-muted-foreground hover:text-foreground"
+							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Collaborate
 						</a>
 						<a
 							href="#"
-							className="text-sm text-muted-foreground hover:text-foreground"
+							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Publish
 						</a>
@@ -45,31 +45,31 @@ export function Footer() {
 						<h3 className="font-semibold">Resources</h3>
 						<a
 							href="#"
-							className="text-sm text-muted-foreground hover:text-foreground"
+							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Documentation
 						</a>
 						<a
 							href="#"
-							className="text-sm text-muted-foreground hover:text-foreground"
+							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Learn
 						</a>
 						<a
 							href="#"
-							className="text-sm text-muted-foreground hover:text-foreground"
+							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Blog
 						</a>
 						<a
 							href="#"
-							className="text-sm text-muted-foreground hover:text-foreground"
+							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Templates
 						</a>
 						<a
 							href="#"
-							className="text-sm text-muted-foreground hover:text-foreground"
+							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Showcase
 						</a>
@@ -80,25 +80,25 @@ export function Footer() {
 						<h3 className="font-semibold">Company</h3>
 						<a
 							href="#"
-							className="text-sm text-muted-foreground hover:text-foreground"
+							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							About
 						</a>
 						<a
 							href="#"
-							className="text-sm text-muted-foreground hover:text-foreground"
+							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Careers
 						</a>
 						<a
 							href="#"
-							className="text-sm text-muted-foreground hover:text-foreground"
+							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Newsroom
 						</a>
 						<a
 							href="#"
-							className="text-sm text-muted-foreground hover:text-foreground"
+							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Contact
 						</a>
@@ -109,25 +109,25 @@ export function Footer() {
 						<h3 className="font-semibold">Legal</h3>
 						<a
 							href="#"
-							className="text-sm text-muted-foreground hover:text-foreground"
+							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Terms
 						</a>
 						<a
 							href="#"
-							className="text-sm text-muted-foreground hover:text-foreground"
+							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Privacy
 						</a>
 						<a
 							href="#"
-							className="text-sm text-muted-foreground hover:text-foreground"
+							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Cookies
 						</a>
 						<a
 							href="#"
-							className="text-sm text-muted-foreground hover:text-foreground"
+							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Licenses
 						</a>
@@ -172,12 +172,12 @@ export function Footer() {
 				{/* Copyright */}
 				<div className="mt-12 border-t pt-8">
 					<div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-						<p className="text-sm text-muted-foreground">
+						<p className="text-muted-foreground text-sm">
 							© 2024 Framer Clone. All rights reserved.
 						</p>
 						<div className="flex items-center gap-2">
 							<div className="h-6 w-6 rounded bg-gradient-to-br from-purple-600 to-blue-600" />
-							<span className="text-sm font-semibold">Framer</span>
+							<span className="font-semibold text-sm">Framer</span>
 						</div>
 					</div>
 				</div>

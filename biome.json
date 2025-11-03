@@ -10,7 +10,19 @@
 	},
 	"linter": {
 		"enabled": true,
-		"rules": { "recommended": false },
+		"rules": {
+			"recommended": false,
+			"nursery": {
+				"useSortedClasses": {
+					"level": "error",
+					"fix": "safe",
+					"options": {
+						"attributes": ["classList"],
+						"functions": ["clsx", "cva", "cn"]
+					}
+				}
+			}
+		},
 		"includes": ["**", "!dist"]
 	},
 	"javascript": { "formatter": { "quoteStyle": "double" } },

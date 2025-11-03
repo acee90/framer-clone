@@ -11,11 +11,11 @@ function App() {
 			<main className="flex-1">
 				{/* Hero Section */}
 				<section className="container mx-auto py-24 md:py-32">
-					<div className="mx-auto max-w-4xl text-center">
-						<h1 className="mb-6 text-5xl font-bold tracking-tight md:text-7xl">
-							Design and ship your dream site
+					<div className="mx-auto max-w-4xl">
+						<h1 className="mx-auto mb-6 max-w-[540px] font-bold text-5xl tracking-tight md:text-8xl">
+							Build better sites, faster
 						</h1>
-						<p className="mb-8 text-xl text-muted-foreground md:text-2xl">
+						<p className="mb-8 text-muted-foreground text-xl md:text-2xl">
 							Zero code, maximum speed. Make professional sites at the speed of
 							thought.
 						</p>
@@ -34,7 +34,7 @@ function App() {
 				<section className="border-t bg-muted/50 py-24">
 					<div className="container mx-auto">
 						<div className="mx-auto max-w-3xl text-center">
-							<h2 className="mb-4 text-4xl font-bold tracking-tight">
+							<h2 className="mb-4 font-bold text-4xl tracking-tight">
 								Everything you need to build a site
 							</h2>
 							<p className="text-lg text-muted-foreground">
@@ -81,7 +81,7 @@ function App() {
 									key={feature.title}
 									className="rounded-lg border bg-background p-6"
 								>
-									<h3 className="mb-2 text-xl font-semibold">
+									<h3 className="mb-2 font-semibold text-xl">
 										{feature.title}
 									</h3>
 									<p className="text-muted-foreground">{feature.description}</p>
@@ -95,10 +95,10 @@ function App() {
 				<section className="border-t py-24">
 					<div className="container mx-auto">
 						<div className="mx-auto max-w-3xl text-center">
-							<h2 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
+							<h2 className="mb-4 font-bold text-4xl tracking-tight md:text-5xl">
 								Start building today
 							</h2>
-							<p className="mb-8 text-xl text-muted-foreground">
+							<p className="mb-8 text-muted-foreground text-xl">
 								Join thousands of designers and developers who build with
 								Framer.
 							</p>
