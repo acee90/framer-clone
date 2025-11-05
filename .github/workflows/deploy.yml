@@ -4,7 +4,7 @@ name: Deploy static content to Pages
 on:
   # 기본 브랜치에 대한 푸시 이벤트 발생 시 실행
   push:
-    branches: ['main']
+    branches: ["main"] # ❗️ main 브랜치가 맞는지 확인하세요.
 
   # Actions 탭에서 수동으로 워크플로우를 실행할 수 있도록 구성
   workflow_dispatch:
@@ -17,7 +17,7 @@ permissions:
 
 # 동시에 하나의 배포만 허용하도록 구성
 concurrency:
-  group: 'pages'
+  group: "pages"
   cancel-in-progress: true
 
 jobs:
@@ -34,18 +34,26 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
-          cache: 'npm'
+          cache: "npm"
       - name: Install dependencies
         run: npm ci
       - name: Build
-        run: npm run build
+        run: npm run build # 👈 1. 빌드가 완료되면 'dist' 폴더가 생성됩니다.
+
+      # ❗️ 2. 이 단계를 추가했습니다!
+      #    'dist' 폴더 안의 index.html을 404.html로 복사합니다.
+      - name: Create 404.html
+        run: cp dist/index.html dist/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # dist 폴더 업로드
-          path: './dist'
+          # 3. 이제 'dist' 폴더에는 index.html과 404.html이 모두 포함됩니다.
+          path: "./dist"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
