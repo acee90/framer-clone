@@ -28,6 +28,11 @@
 	"javascript": { "formatter": { "quoteStyle": "double" } },
 	"overrides": [
 		{
+			"includes": ["**/*.gen.ts"],
+			"linter": { "enabled": false },
+			"formatter": { "enabled": false }
+		},
+		{
 			"includes": ["**/*.{ts,tsx}"],
 			"linter": {
 				"rules": {
