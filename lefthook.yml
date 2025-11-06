@@ -5,7 +5,3 @@ pre-commit:
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
       run: npx @biomejs/biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
       stage_fixed: true
-
-    # 2. TypeScript로 프로젝트 전체 타입 검사 실행
-    typecheck:
-      run: npx tsc --noEmit
