@@ -1,9 +1,12 @@
 import {
+	ArrowRightLeft,
 	Database,
+	Heart,
 	Menu,
 	Palette,
 	Rocket,
 	Search,
+	ShoppingBag,
 	Sparkles,
 	Users,
 } from "lucide-react";
@@ -79,17 +82,47 @@ const menuItems: MenuItem[] = [
 			},
 		],
 	},
+	{
+		title: "Teams",
+		href: "#",
+		subitems: [
+			{
+				title: "Startups",
+				href: "#",
+				description: "Zero to one",
+				icon: Rocket,
+			},
+			{
+				title: "Agencies",
+				href: "#",
+				description: "No limits, no fees",
+				icon: ShoppingBag,
+			},
+			{
+				title: "Switch",
+				href: "#",
+				description: "In one week",
+				icon: ArrowRightLeft,
+			},
+			{
+				title: "Stories",
+				href: "#",
+				description: "Customer usecases",
+				icon: Heart,
+			},
+		],
+	},
 ];
 
 export function Navbar() {
 	return (
 		<nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
-			<div className="container relative mx-auto flex h-16 items-center justify-between">
+			<div className="container relative mx-auto flex h-16 max-w-7xl items-center justify-between">
 				{/* Logo */}
 				<div className="flex items-center gap-8">
 					<a href="/" className="flex items-center space-x-2">
 						<div className="h-8 w-8 rounded-lg bg-linear-to-br from-purple-600 to-blue-600" />
-						<span className="font-bold text-xl">Framer</span>
+						<span className="font-bold text-sm">Framer</span>
 					</a>
 
 					{/* Desktop Navigation */}
@@ -97,11 +130,11 @@ export function Navbar() {
 						<NavigationMenuList>
 							{menuItems.map((item) => (
 								<NavigationMenuItem key={item.title}>
-									<NavigationMenuTrigger className="font-medium text-sm">
+									<NavigationMenuTrigger className="text-sm">
 										{item.title}
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
-										<ul className="grid w-[260px] grid-cols-1 gap-3">
+										<ul className="grid w-[260px] grid-cols-1">
 											{item.subitems?.map((subitem) => {
 												const Icon = subitem.icon;
 												return (

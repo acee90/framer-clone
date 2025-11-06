@@ -38,6 +38,8 @@
 	--gap-xl: 2rem;
 	--gap-2xl: 3rem;
 	--gap-3xl: 4rem;
+
+	--text-sm: 15px;
 }
 
 :root {
