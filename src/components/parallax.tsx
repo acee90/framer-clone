@@ -54,6 +54,7 @@ export default function ParallaxSmooth() {
 					objectFit: "cover",
 					willChange: "transform", // ✅ GPU 가속 유도
 				}}
+				alt="background"
 			/>
 
 			{/* 중간층 */}
@@ -69,6 +70,7 @@ export default function ParallaxSmooth() {
 					opacity: 0.8,
 					willChange: "transform", // ✅
 				}}
+				alt="middle"
 			/>
 
 			{/* 전경 */}
