@@ -1,6 +1,11 @@
 pre-commit:
   commands:
-    check:
+    # 1. Biome으로 빠른 린팅/포맷팅 실행 (스테이징된 파일 대상)
+    lint:
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
       run: npx @biomejs/biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
       stage_fixed: true
+
+    # 2. TypeScript로 프로젝트 전체 타입 검사 실행
+    typecheck:
+      run: npx tsc --noEmit
