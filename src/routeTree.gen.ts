@@ -9,15 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TestRouteImport } from './routes/test'
-import { Route as ScrollTriggerRouteImport } from './routes/scroll-trigger'
-import { Route as ParallaxRouteImport } from './routes/parallax'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ParallaxRouteImport } from './routes/parallax'
+import { Route as ScrollTriggerRouteImport } from './routes/scroll-trigger'
+import { Route as StoriesRouteImport } from './routes/stories'
+import { Route as TestRouteImport } from './routes/test'
 
 const TestRoute = TestRouteImport.update({
   id: '/test',
   path: '/test',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StoriesRoute = StoriesRouteImport.update({
+  id: '/stories',
+  path: '/stories',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ScrollTriggerRoute = ScrollTriggerRouteImport.update({
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/parallax': typeof ParallaxRoute
   '/scroll-trigger': typeof ScrollTriggerRoute
+  '/stories': typeof StoriesRoute
   '/test': typeof TestRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/parallax': typeof ParallaxRoute
   '/scroll-trigger': typeof ScrollTriggerRoute
+  '/stories': typeof StoriesRoute
   '/test': typeof TestRoute
 }
 export interface FileRoutesById {
@@ -61,14 +69,28 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/parallax': typeof ParallaxRoute
   '/scroll-trigger': typeof ScrollTriggerRoute
+  '/stories': typeof StoriesRoute
   '/test': typeof TestRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/parallax' | '/scroll-trigger' | '/test'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/parallax'
+    | '/scroll-trigger'
+    | '/stories'
+    | '/test'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/parallax' | '/scroll-trigger' | '/test'
-  id: '__root__' | '/' | '/about' | '/parallax' | '/scroll-trigger' | '/test'
+  to: '/' | '/about' | '/parallax' | '/scroll-trigger' | '/stories' | '/test'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/parallax'
+    | '/scroll-trigger'
+    | '/stories'
+    | '/test'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,6 +98,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ParallaxRoute: typeof ParallaxRoute
   ScrollTriggerRoute: typeof ScrollTriggerRoute
+  StoriesRoute: typeof StoriesRoute
   TestRoute: typeof TestRoute
 }
 
@@ -86,6 +109,13 @@ declare module '@tanstack/react-router' {
       path: '/test'
       fullPath: '/test'
       preLoaderRoute: typeof TestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stories': {
+      id: '/stories'
+      path: '/stories'
+      fullPath: '/stories'
+      preLoaderRoute: typeof StoriesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/scroll-trigger': {
@@ -124,6 +154,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ParallaxRoute: ParallaxRoute,
   ScrollTriggerRoute: ScrollTriggerRoute,
+  StoriesRoute: StoriesRoute,
   TestRoute: TestRoute,
 }
 export const routeTree = rootRouteImport
