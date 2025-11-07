@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { DesignSection } from "@/components/design-section";
 import { FramerSection1 } from "@/components/framer-section-1";
 import TypingDeleteLoop from "@/components/typing-loop";
 import { Button } from "@/components/ui/button";
@@ -51,6 +52,8 @@ function HomeComponent() {
 			</section>
 
 			<FramerSection1 />
+
+			<DesignSection />
 
 			{/* Features Section */}
 			<section className="bg-background py-24">
