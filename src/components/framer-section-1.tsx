@@ -1,3 +1,7 @@
+import { Link } from "@tanstack/react-router";
+import { ChevronRight } from "lucide-react";
+import { Button } from "./ui/button";
+
 // 랜덤 높이 생성 (320-360px)
 function getRandomHeight() {
 	return Math.floor(Math.random() * (360 - 320 + 1)) + 320;
@@ -92,6 +96,42 @@ function Scroll() {
 	);
 }
 
+function Stories() {
+	const logos = [
+		"Bird",
+		"SpaceX",
+		"Visual Electronic",
+		"Dribbble",
+		"miro",
+		"perplexity",
+		"doordash",
+		"mixpanel",
+	];
+	return (
+		<div className="group relative mx-auto py-8">
+			<div className="grid h-full w-full max-w-[640px] animate-out grid-cols-4 gap-x-6 gap-y-10 transition-all delay-75 duration-300 group-hover:blur-xs">
+				{logos.map((logo) => (
+					<div className="mx-auto flex h-10 items-center text-nowrap font-serif text-white text-xl">
+						{logo}
+					</div>
+				))}
+			</div>
+			<div className="absolute top-0 left-0 z-10 flex h-full w-full items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+				<Button
+					variant="ghost"
+					className="flex items-center gap-2 leading-4"
+					asChild
+				>
+					<Link to="/">
+						<span>Meet out customers</span>
+						<ChevronRight className="size-4" />
+					</Link>
+				</Button>
+			</div>
+		</div>
+	);
+}
+
 export function FramerSection1() {
 	return (
 		<div className="relative h-[1200px] w-screen overflow-clip">
@@ -106,6 +146,9 @@ export function FramerSection1() {
 				<Scroll />
 				<Column />
 				<Column />
+			</div>
+			<div className="absolute bottom-0 flex w-full justify-center">
+				<Stories />
 			</div>
 		</div>
 	);
