@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import {
 	ArrowRightLeft,
 	Database,
@@ -106,7 +107,7 @@ const menuItems: MenuItem[] = [
 			},
 			{
 				title: "Stories",
-				href: "#",
+				href: "/stories",
 				description: "Customer usecases",
 				icon: Heart,
 			},
@@ -130,7 +131,7 @@ export function Navbar() {
 						<NavigationMenuList>
 							{menuItems.map((item) => (
 								<NavigationMenuItem key={item.title}>
-									<NavigationMenuTrigger className="text-sm">
+									<NavigationMenuTrigger className="bg-transparent text-sm hover:bg-transparent">
 										{item.title}
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
@@ -140,8 +141,8 @@ export function Navbar() {
 												return (
 													<li key={subitem.title}>
 														<NavigationMenuLink asChild>
-															<a
-																href={subitem.href}
+															<Link
+																to={subitem.href}
 																className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors"
 															>
 																<div className="flex items-center gap-3">
@@ -159,7 +160,7 @@ export function Navbar() {
 																		</p>
 																	</div>
 																</div>
-															</a>
+															</Link>
 														</NavigationMenuLink>
 													</li>
 												);

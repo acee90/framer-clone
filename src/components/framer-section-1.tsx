@@ -122,7 +122,7 @@ function Stories() {
 					className="flex items-center gap-2 leading-4"
 					asChild
 				>
-					<Link to="/">
+					<Link to="/stories">
 						<span>Meet out customers</span>
 						<ChevronRight className="size-4" />
 					</Link>
