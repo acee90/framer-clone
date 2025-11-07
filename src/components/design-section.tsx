@@ -2,6 +2,7 @@
 
 import { Link, useNavigate } from "@tanstack/react-router";
 import { ChevronRight } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import {
 	Accordion,
 	AccordionContent,
@@ -39,6 +40,8 @@ const items = [
 
 export function DesignSection() {
 	const navigate = useNavigate();
+	const [activeValue, setActiveValue] = useState("feat-ai");
+	const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
 
 	const moveAnchor = (hash: string) => {
 		navigate({
@@ -46,6 +49,32 @@ export function DesignSection() {
 			hash: hash,
 		});
 	};
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					if (entry.isIntersecting) {
+						const hash = entry.target.id;
+						setActiveValue(hash);
+						break;
+					}
+				}
+			},
+			{
+				threshold: 0.5, // 50% 보일 때 트리거
+				rootMargin: "-20% 0px -20% 0px", // 상하 20% 여백
+			},
+		);
+
+		for (const ref of featureRefs.current) {
+			if (ref) observer.observe(ref);
+		}
+
+		return () => {
+			observer.disconnect();
+		};
+	}, []);
 
 	return (
 		<section id="design" className="flex flex-col gap-y-20 pt-20">
@@ -61,6 +90,7 @@ export function DesignSection() {
 					type="single"
 					collapsible={false}
 					defaultValue="feat-ai"
+					value={activeValue}
 					onValueChange={moveAnchor}
 					className="sticky top-[120px] h-fit w-full max-w-[360px]"
 				>
@@ -90,8 +120,15 @@ export function DesignSection() {
 
 				{/* feature */}
 				<div id="features" className="flex flex-1 flex-col gap-y-10">
-					{items.map((item) => (
-						<div id={item.hash} className="min-h-screen border">
+					{items.map((item, index) => (
+						<div
+							key={item.hash}
+							id={item.hash}
+							ref={(el) => {
+								featureRefs.current[index] = el;
+							}}
+							className="min-h-screen border"
+						>
 							<div className="flex h-full w-full items-center justify-center text-4xl">
 								{item.title}
 							</div>
