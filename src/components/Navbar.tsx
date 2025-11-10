@@ -177,11 +177,11 @@ export function Navbar() {
 				<div className="flex items-center gap-4">
 					{/* Desktop CTA */}
 					<div className="hidden md:flex md:items-center md:gap-4">
-						<Button variant="ghost" size="sm">
+						<Button variant="ghost" size="sm" className="px-0!">
 							Sign in
 						</Button>
-						<Button size="sm" className="bg-blue-600 hover:bg-blue-700">
-							Start for free
+						<Button className="h-auto! rounded-full bg-white px-3 py-2 text-black leading-none hover:bg-white hover:opacity-80">
+							Sign up
 						</Button>
 					</div>
 
