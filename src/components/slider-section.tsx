@@ -135,9 +135,6 @@ export function SliderSection() {
 		onNextButtonClick,
 	} = usePrevNextButtons(_emblaApi);
 
-	const _slides = Array.from(Array(5).keys());
-	const _dots = ["Perplexity", "Visual Electric", "Biograph", "Cradle", "Miro"];
-
 	return (
 		<section className="flex flex-col gap-y-15 px-10 py-40">
 			<div className="container">
@@ -158,7 +155,7 @@ export function SliderSection() {
 					{/* controls */}
 					<div className="container relative mt-10 flex items-center">
 						<div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 flex items-center gap-4">
-							{_dots.map((value, index) => (
+							{_data.map(({ dot }, index) => (
 								<div
 									key={index}
 									onClick={() => onDotButtonClick(index)}
@@ -169,7 +166,7 @@ export function SliderSection() {
 										},
 									)}
 								>
-									{value}
+									{dot}
 								</div>
 							))}
 						</div>
