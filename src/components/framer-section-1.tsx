@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 
 // 랜덤 높이 생성 (320-360px)
 function getRandomHeight() {
-	return Math.floor(Math.random() * (360 - 320 + 1)) + 320;
+	return Math.floor(Math.random() * (36 - 30 + 1)) * 10 + 280;
 }
 
 // 랜덤 색상 배열 (터미널 컬러 테마 - 검은 배경에 어울리는 vivid 색상)
