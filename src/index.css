@@ -4,239 +4,247 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-	--color-background: #000000;
-	--color-foreground: #ffffff;
-	--color-surface: #111111;
-	--color-primary: #0099ff;
-	--color-primary-foreground: #ffffff;
-	--color-secondary: rgba(255, 255, 255, 0.1);
-	--color-secondary-foreground: #ffffff;
-	--color-muted: rgba(255, 255, 255, 0.05);
-	--color-muted-foreground: #fff9;
-	--color-accent: rgba(255, 255, 255, 0.1);
-	--color-accent-foreground: #ffffff;
-	--color-destructive: #ff3366;
-	--color-destructive-foreground: #ffffff;
-	--color-popover: #111111;
-	--color-popover-foreground: #ffffff;
-	--color-card: rgba(255, 255, 255, 0.05);
-	--color-card-foreground: #ffffff;
-	--color-border: rgba(255, 255, 255, 0.1);
-	--color-input: rgba(255, 255, 255, 0.1);
-	--color-ring: #0099ff;
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-surface: #111111;
+  --color-primary: #0099ff;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: rgba(255, 255, 255, 0.1);
+  --color-secondary-foreground: #ffffff;
+  --color-muted: rgba(255, 255, 255, 0.05);
+  --color-muted-foreground: #fff9;
+  --color-accent: rgba(255, 255, 255, 0.1);
+  --color-accent-foreground: #ffffff;
+  --color-destructive: #ff3366;
+  --color-destructive-foreground: #ffffff;
+  --color-popover: #111111;
+  --color-popover-foreground: #ffffff;
+  --color-card: rgba(255, 255, 255, 0.05);
+  --color-card-foreground: #ffffff;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-input: rgba(255, 255, 255, 0.1);
+  --color-ring: #0099ff;
 
-	--radius-sm: 0.5rem;
-	--radius-md: 0.75rem;
-	--radius-lg: 1rem;
-	--radius-xl: 1.5rem;
-	--radius-full: 9999px;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
 
-	--gap-xs: 0.25rem;
-	--gap-sm: 0.5rem;
-	--gap-md: 1rem;
-	--gap-lg: 1.5rem;
-	--gap-xl: 2rem;
-	--gap-2xl: 3rem;
-	--gap-3xl: 4rem;
+  --gap-xs: 0.25rem;
+  --gap-sm: 0.5rem;
+  --gap-md: 1rem;
+  --gap-lg: 1.5rem;
+  --gap-xl: 2rem;
+  --gap-2xl: 3rem;
+  --gap-3xl: 4rem;
 
-	--text-sm: 15px;
+  --text-sm: 15px;
 }
 
 :root {
-	/* Primary Colors */
-	--background: #000000;
-	--surface: #111111;
-	--text-primary: #ffffff;
-	--text-secondary: #999999;
-	--text-muted: #666666;
+  /* Primary Colors */
+  --background: #000000;
+  --surface: #111111;
+  --text-primary: #ffffff;
+  --text-secondary: #999999;
+  --text-muted: #666666;
 
-	/* Accent Colors */
-	--primary: #0099ff;
-	--primary-hover: #0088ee;
-	--success: #00cc88;
-	--warning: #ffaa00;
-	--error: #ff3366;
+  /* Accent Colors */
+  --primary: #0099ff;
+  --primary-hover: #0088ee;
+  --success: #00cc88;
+  --warning: #ffaa00;
+  --error: #ff3366;
 
-	/* Component Colors */
-	--card: rgba(255, 255, 255, 0.05);
-	--card-foreground: #ffffff;
-	--border: rgba(255, 255, 255, 0.1);
-	--border-hover: rgba(255, 255, 255, 0.2);
-	--input: rgba(255, 255, 255, 0.1);
-	--ring: #0099ff;
+  /* Component Colors */
+  --card: rgba(255, 255, 255, 0.05);
+  --card-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(255, 255, 255, 0.2);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #0099ff;
 
-	/* shadcn/ui compatibility - map to neutral colors */
-	--foreground: #ffffff;
-	--popover: #111111;
-	--popover-foreground: #ffffff;
-	--primary-foreground: #ffffff;
-	--secondary: rgba(255, 255, 255, 0.1);
-	--secondary-foreground: #ffffff;
-	--muted: rgba(255, 255, 255, 0.05);
-	--muted-foreground: #fff9;
-	--accent: rgba(255, 255, 255, 0.1);
-	--accent-foreground: #ffffff;
-	--destructive: #ff3366;
-	--destructive-foreground: #ffffff;
+  /* shadcn/ui compatibility - map to neutral colors */
+  --foreground: #ffffff;
+  --popover: #111111;
+  --popover-foreground: #ffffff;
+  --primary-foreground: #ffffff;
+  --secondary: rgba(255, 255, 255, 0.1);
+  --secondary-foreground: #ffffff;
+  --muted: rgba(255, 255, 255, 0.05);
+  --muted-foreground: #fff9;
+  --accent: rgba(255, 255, 255, 0.1);
+  --accent-foreground: #ffffff;
+  --destructive: #ff3366;
+  --destructive-foreground: #ffffff;
 
-	/* Spacing */
-	--radius: 0.75rem;
+  /* Spacing */
+  --radius: 0.75rem;
 
-	/* Font Families */
-	font-family:
-		"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* Font Families */
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 }
 
 @layer base {
-	* {
-		@apply border-border outline-ring/50;
-	}
+  * {
+    @apply border-border outline-ring/50;
+  }
 
-	html {
-		scroll-behavior: smooth;
-	}
+  html {
+    scroll-behavior: smooth;
+  }
 
-	body {
-		@apply bg-background text-foreground;
-		font-family:
-			"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-		line-height: 1.5;
-	}
+  body {
+    @apply bg-background text-foreground;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+    line-height: 1.5;
+  }
 
-	/* Typography */
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		line-height: 1.2;
-		font-weight: 600;
-	}
+  /* Typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.2;
+    font-weight: 600;
+  }
 
-	h1 {
-		font-size: clamp(3rem, 5vw, 4rem);
-	}
+  h1 {
+    font-size: clamp(3rem, 5vw, 4rem);
+  }
 
-	h2 {
-		font-size: clamp(2.25rem, 4vw, 3rem);
-	}
+  h2 {
+    font-size: clamp(2.25rem, 4vw, 3rem);
+  }
 
-	h3 {
-		font-size: clamp(1.5rem, 3vw, 2rem);
-	}
+  h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
 
-	/* Focus styles for accessibility */
-	*:focus-visible {
-		outline: 2px solid var(--ring);
-		outline-offset: 2px;
-	}
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
 }
 
 /* Utility Classes */
 @layer utilities {
-	/* Shadow utilities */
-	.shadow-sm {
-		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-	}
+  /* Shadow utilities */
+  .shadow-sm {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
 
-	.shadow-md {
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	}
+  .shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
 
-	.shadow-lg {
-		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-	}
+  .shadow-lg {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
 
-	.shadow-xl {
-		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-	}
+  .shadow-xl {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
 
-	.shadow-glow {
-		box-shadow: 0 0 20px rgba(0, 153, 255, 0.3);
-	}
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(0, 153, 255, 0.3);
+  }
 
-	/* Glassmorphism effects */
-	.glass {
-		background: rgba(255, 255, 255, 0.05);
-		backdrop-filter: blur(20px);
-		border: 1px solid rgba(255, 255, 255, 0.1);
-	}
+  /* Glassmorphism effects */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
 
-	.glass-card {
-		background: rgba(255, 255, 255, 0.05);
-		backdrop-filter: blur(10px);
-		border: 1px solid rgba(255, 255, 255, 0.1);
-		border-radius: 1rem;
-	}
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+  }
 
-	/* Gradient backgrounds */
-	.gradient-hero {
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-	}
+  /* Gradient backgrounds */
+  .gradient-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
 
-	.gradient-card {
-		background: linear-gradient(
-			180deg,
-			rgba(255, 255, 255, 0.05) 0%,
-			rgba(255, 255, 255, 0.02) 100%
-		);
-	}
+  .gradient-card {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+  }
 }
 
 @utility container {
-	width: 100%;
-	margin-inline: auto; /* 중앙 정렬 */
-	padding-inline: 1rem; /* 좌우 패딩 (원하는 값으로 설정) */
+  width: 100%;
+  margin-inline: auto; /* 중앙 정렬 */
+  padding-inline: 1rem; /* 좌우 패딩 (원하는 값으로 설정) */
 
-	/* lg 브레이크포인트 (기본값: 1024px) 이상에서 max-width 설정 */
-	@variant lg {
-		max-width: 1200px;
-		/* 또는 rem으로 변환: max-width: 75rem; (1200px / 16 = 75rem) */
-	}
+  /* lg 브레이크포인트 (기본값: 1024px) 이상에서 max-width 설정 */
+  @variant lg {
+    max-width: calc(75rem + 1rem);
+    /* 또는 rem으로 변환: max-width: 75rem; (1200px / 16 = 75rem) */
+  }
 }
 
 /* Animations */
 @keyframes fadeInUp {
-	from {
-		opacity: 0;
-		transform: translateY(20px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes scaleIn {
-	from {
-		opacity: 0;
-		transform: scale(0.95);
-	}
-	to {
-		opacity: 1;
-		transform: scale(1);
-	}
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Animation utility classes */
 .animate-fade-in-up {
-	animation: fadeInUp 0.6s ease-out;
+  animation: fadeInUp 0.6s ease-out;
 }
 
 .animate-fade-in {
-	animation: fadeIn 0.4s ease-out;
+  animation: fadeIn 0.4s ease-out;
 }
 
 .animate-scale-in {
-	animation: scaleIn 0.3s ease-out;
+  animation: scaleIn 0.3s ease-out;
 }
