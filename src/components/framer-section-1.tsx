@@ -109,14 +109,14 @@ function Stories() {
 	];
 	return (
 		<div className="group relative mx-auto py-8">
-			<div className="grid h-full w-full max-w-[640px] animate-out grid-cols-4 gap-x-6 gap-y-10 transition-all delay-75 duration-300 group-hover:blur-xs">
+			<div className="grid h-full w-full max-w-[640px] animate-out grid-cols-4 gap-x-6 gap-y-10 transition-all delay-75 duration-500 group-hover:blur-xs">
 				{logos.map((logo) => (
 					<div className="mx-auto flex h-10 items-center text-nowrap font-serif text-white text-xl">
 						{logo}
 					</div>
 				))}
 			</div>
-			<div className="absolute top-0 left-0 z-10 flex h-full w-full items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+			<div className="absolute top-0 left-0 z-10 flex h-full w-full items-center justify-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
 				<Button
 					variant="ghost"
 					className="flex items-center gap-2 leading-4"
