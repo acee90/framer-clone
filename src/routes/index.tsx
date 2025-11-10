@@ -57,23 +57,6 @@ function HomeComponent() {
 			<DesignSection />
 
 			<SliderSection />
-
-			{/* CTA Section */}
-			<section className="border-t py-24">
-				<div className="container mx-auto">
-					<div className="mx-auto max-w-3xl text-center">
-						<h2 className="mb-4 font-bold text-4xl tracking-tight md:text-5xl">
-							Start building today
-						</h2>
-						<p className="mb-8 text-muted-foreground text-xl">
-							Join thousands of designers and developers who build with Framer.
-						</p>
-						<Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-							Start for free
-						</Button>
-					</div>
-				</div>
-			</section>
 		</>
 	);
 }
