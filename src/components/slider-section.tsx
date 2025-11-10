@@ -1,4 +1,5 @@
 import useEmblaCarousel from "embla-carousel-react";
+import { useRef } from "react";
 
 import "@/css/embla.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -7,6 +8,117 @@ import { usePrevNextButtons } from "./embla-carousel-arrow-buttons";
 import { useDotButton } from "./embla-carousel-dot-button";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
+
+const _data = [
+	{
+		id: "1",
+		icon: "https://framerusercontent.com/images/4gKZnsOSKARj5SbgbbbF1CNqro.png?width=240&height=240",
+		dot: "Perplexity",
+		description:
+			"“Framer gives us everything we need to move fast. We don’t wait on dev. We don’t compromise on design.”",
+		image: "https://picsum.photos/seed/101/600/600",
+		video: "https://www.pexels.com/ko-kr/download/video/5081433/",
+	},
+	{
+		id: "2",
+		icon: "https://framerusercontent.com/images/RkwWTf2otULCGv3QEORgS5bH7Eg.png?width=160&height=160",
+		dot: "Visual Electric",
+		description:
+			"“Launching on Framer was seamless. Live in no time, no friction.”",
+		image: "https://picsum.photos/seed/102/600/600",
+		video: "https://www.pexels.com/ko-kr/download/video/6394054/",
+	},
+	{
+		id: "3",
+		icon: "https://framerusercontent.com/images/RkwWTf2otULCGv3QEORgS5bH7Eg.png?width=160&height=160",
+		dot: "Biograph",
+		description:
+			"“Framer gave us full creative freedom. No code limits, no handoffs. We shipped an immersive brand site in days.”",
+		image: "https://picsum.photos/seed/103/600/600",
+		video: "https://www.pexels.com/ko-kr/download/video/854053/",
+	},
+	{
+		id: "4",
+		icon: "https://framerusercontent.com/images/RkwWTf2otULCGv3QEORgS5bH7Eg.png?width=160&height=160",
+		dot: "Cradle",
+		description:
+			"“Framer gives us everything we need to move fast. We don’t wait on dev. We don’t compromise on design.”",
+		image: "https://picsum.photos/seed/104/600/600",
+		video: "https://www.pexels.com/ko-kr/download/video/6394054/",
+	},
+	{
+		id: "4",
+		icon: "https://framerusercontent.com/images/RkwWTf2otULCGv3QEORgS5bH7Eg.png?width=160&height=160",
+		dot: "Miro",
+		description:
+			"“With Framer, our designers can ship updates daily. No dev handoff. No staging hassle.”",
+		image: "https://picsum.photos/seed/105/600/600",
+		video: "https://www.pexels.com/ko-kr/download/video/1536315/",
+	},
+];
+
+function SlideItem({
+	data,
+}: {
+	data: {
+		id: string;
+		icon: string;
+		dot: string;
+		description: string;
+		image: string;
+		video: string;
+	};
+}) {
+	const videoRef = useRef<HTMLVideoElement>(null);
+
+	const handleMouseEnter = () => {
+		if (videoRef.current) {
+			videoRef.current.play();
+		}
+	};
+
+	const handleMouseLeave = () => {
+		if (videoRef.current) {
+			videoRef.current.pause();
+		}
+	};
+
+	return (
+		<Card
+			className="group grid aspect-1200/560 grid-cols-2 gap-0 overflow-hidden p-0"
+			onMouseEnter={handleMouseEnter}
+			onMouseLeave={handleMouseLeave}
+		>
+			<div className="flex flex-col justify-between gap-y-10 p-15">
+				<div className="aspect-square w-[60px]">
+					<img src={data.icon} />
+				</div>
+				<p className="pr-15 font-semibold text-3xl">{data.description}</p>
+				<div>
+					{/* profile */}
+					<Button variant="ghost">
+						Read more
+						<ChevronRight />
+					</Button>
+				</div>
+			</div>
+			<div className="relative flex items-center justify-center overflow-hidden">
+				<img
+					className="absolute top-0 left-0 z-1 h-full w-full animate-out object-cover transition-transform duration-500 group-hover:scale-105 group-hover:opacity-80"
+					src={data.image}
+				/>
+				<div className="z-10 h-[300px] w-[480px] overflow-hidden rounded-md">
+					<video
+						className="h-full w-full object-cover"
+						ref={videoRef}
+						src={data.video}
+						loop
+					/>
+				</div>
+			</div>
+		</Card>
+	);
+}
 
 export function SliderSection() {
 	const [emblaRef, _emblaApi] = useEmblaCarousel({
@@ -23,7 +135,7 @@ export function SliderSection() {
 		onNextButtonClick,
 	} = usePrevNextButtons(_emblaApi);
 
-	const slides = Array.from(Array(5).keys());
+	const _slides = Array.from(Array(5).keys());
 	const _dots = ["Perplexity", "Visual Electric", "Biograph", "Cradle", "Miro"];
 
 	return (
@@ -36,28 +148,9 @@ export function SliderSection() {
 			<div className="embla">
 				<div className="embla__viewport" ref={emblaRef}>
 					<div className="embla__container">
-						{slides.map((index) => (
+						{_data.map((data, index) => (
 							<div className="embla__slide" key={index}>
-								<Card className="grid aspect-video grid-cols-2 gap-0 overflow-hidden p-0">
-									<div className="flex flex-col justify-between gap-y-10 p-15">
-										<div className="aspect-square w-[60px]">
-											<img src="https://framerusercontent.com/images/RkwWTf2otULCGv3QEORgS5bH7Eg.png?width=160&height=160" />
-										</div>
-										<p className="pr-15 font-semibold text-3xl">
-											{`“Framer gives us everything we need to move fast. We don’t wait on dev. We don’t compromise on design.”`}
-										</p>
-										<div>
-											{/* profile */}
-											<Button variant="ghost">
-												Read more
-												<ChevronRight />
-											</Button>
-										</div>
-									</div>
-									<div className="flex items-center justify-center bg-gray-50/20">
-										{index + 1}
-									</div>
-								</Card>
+								<SlideItem data={data} />
 							</div>
 						))}
 					</div>
