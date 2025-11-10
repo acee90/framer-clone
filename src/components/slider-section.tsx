@@ -21,7 +21,7 @@ const _data = [
 	},
 	{
 		id: "2",
-		icon: "https://framerusercontent.com/images/RkwWTf2otULCGv3QEORgS5bH7Eg.png?width=160&height=160",
+		icon: "https://framerusercontent.com/images/MHx8YZeRYEt84rFq3Xjf510ukFI.png?scale-down-to=512&width=1024&height=762",
 		dot: "Visual Electric",
 		description:
 			"“Launching on Framer was seamless. Live in no time, no friction.”",
@@ -30,7 +30,7 @@ const _data = [
 	},
 	{
 		id: "3",
-		icon: "https://framerusercontent.com/images/RkwWTf2otULCGv3QEORgS5bH7Eg.png?width=160&height=160",
+		icon: "https://framerusercontent.com/images/VVlSsBCZwRNiKHsE4BiCZqBThM.png?width=225&height=225",
 		dot: "Biograph",
 		description:
 			"“Framer gave us full creative freedom. No code limits, no handoffs. We shipped an immersive brand site in days.”",
@@ -48,7 +48,7 @@ const _data = [
 	},
 	{
 		id: "4",
-		icon: "https://framerusercontent.com/images/RkwWTf2otULCGv3QEORgS5bH7Eg.png?width=160&height=160",
+		icon: "https://framerusercontent.com/images/f0zD56BWH0z8GfKM9dd8nMsCkc.png?width=240&height=240",
 		dot: "Miro",
 		description:
 			"“With Framer, our designers can ship updates daily. No dev handoff. No staging hassle.”",
@@ -85,18 +85,21 @@ function SlideItem({
 
 	return (
 		<Card
-			className="group grid aspect-1200/560 grid-cols-2 gap-0 overflow-hidden p-0"
+			className="group grid aspect-1200/560 grid-cols-2 gap-0 overflow-hidden bg-transparent p-0"
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
 		>
 			<div className="flex flex-col justify-between gap-y-10 p-15">
-				<div className="aspect-square w-[60px]">
+				<div className="aspect-square w-[60px] overflow-hidden rounded-lg">
 					<img src={data.icon} />
 				</div>
 				<p className="pr-15 font-semibold text-3xl">{data.description}</p>
 				<div>
 					{/* profile */}
-					<Button variant="ghost">
+					<Button
+						variant="ghost"
+						className="opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+					>
 						Read more
 						<ChevronRight />
 					</Button>
@@ -104,7 +107,7 @@ function SlideItem({
 			</div>
 			<div className="relative flex items-center justify-center overflow-hidden">
 				<img
-					className="absolute top-0 left-0 z-1 h-full w-full animate-out object-cover transition-transform duration-500 group-hover:scale-105 group-hover:opacity-80"
+					className="absolute top-0 left-0 z-1 h-full w-full animate-out object-cover transition-[scale,opacity] duration-500 group-hover:scale-105 group-hover:opacity-75"
 					src={data.image}
 				/>
 				<div className="z-10 h-[300px] w-[480px] overflow-hidden rounded-md">
@@ -174,7 +177,7 @@ export function SliderSection() {
 						<div className="ml-auto flex items-center gap-[5px]">
 							<Button
 								size="icon-sm"
-								className="rounded-full bg-white/10 transition-transform duration-300 hover:bg-white/10 active:scale-90"
+								className="cursor-pointer rounded-full bg-white/10 transition-transform duration-300 hover:bg-white/10 active:scale-90"
 								onClick={onPrevButtonClick}
 								disabled={prevBtnDisabled}
 							>
@@ -183,7 +186,7 @@ export function SliderSection() {
 
 							<Button
 								size="icon-sm"
-								className="rounded-full bg-white/10 transition-transform duration-300 hover:bg-white/10 active:scale-90"
+								className="cursor-pointer rounded-full bg-white/10 transition-transform duration-300 hover:bg-white/10 active:scale-90"
 								onClick={onNextButtonClick}
 								disabled={nextBtnDisabled}
 							>
