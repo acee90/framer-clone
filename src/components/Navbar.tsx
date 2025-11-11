@@ -118,7 +118,7 @@ const menuItems: MenuItem[] = [
 export function Navbar() {
 	return (
 		<nav className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
-			<div className="container relative mx-auto flex h-16 max-w-7xl items-center justify-between">
+			<div className="container relative mx-auto flex h-16 items-center justify-between">
 				{/* Logo */}
 				<div className="flex items-center gap-8">
 					<a href="/" className="flex items-center space-x-2">
