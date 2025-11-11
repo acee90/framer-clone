@@ -1,7 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { DesignSection } from "@/components/design-section";
 import { FramerSection1 } from "@/components/framer-section-1";
-import { SliderSection } from "@/components/slider-section";
+import {
+	DesignSection,
+	ExpertSection,
+	SliderSection,
+} from "@/components/section/";
 import TypingDeleteLoop from "@/components/typing-loop";
 import { Button } from "@/components/ui/button";
 
@@ -53,10 +56,9 @@ function HomeComponent() {
 			</section>
 
 			<FramerSection1 />
-
 			<DesignSection />
-
 			<SliderSection />
+			<ExpertSection />
 		</>
 	);
 }
