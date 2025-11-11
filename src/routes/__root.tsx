@@ -10,7 +10,7 @@ export const Route = createRootRoute({
 function RootLayout() {
 	return (
 		<>
-			<div className="flex min-h-screen flex-col">
+			<div className="flex min-h-screen flex-col overflow-x-clip">
 				<Navbar />
 				<main className="flex-1">
 					<Outlet />
