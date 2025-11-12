@@ -5,6 +5,7 @@ import {
 	ExpertSection,
 	SliderSection,
 } from "@/components/section/";
+import { CommunitySection } from "@/components/section/community";
 import TypingDeleteLoop from "@/components/typing-loop";
 import { Button } from "@/components/ui/button";
 
@@ -59,6 +60,7 @@ function HomeComponent() {
 			<DesignSection />
 			<SliderSection />
 			<ExpertSection />
+			<CommunitySection />
 		</>
 	);
 }

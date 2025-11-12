@@ -1,6 +1,5 @@
 "use client";
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -76,7 +75,7 @@ export function ExpertSection() {
 								/>
 							))}
 						</div>
-						<div className="ml-auto flex items-center justify-end gap-2">
+						{/* <div className="ml-auto flex items-center justify-end gap-2">
 							<Button
 								variant="secondary"
 								size="icon-sm"
@@ -91,7 +90,7 @@ export function ExpertSection() {
 							>
 								<ChevronRight className="size-5" />
 							</Button>
-						</div>
+						</div> */}
 					</div>
 				</Carousel>
 			</div>
