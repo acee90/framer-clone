@@ -2,8 +2,16 @@
 	"editor.tabSize": 2,
 	"editor.detectIndentation": false,
 	"editor.insertSpaces": false,
+	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "biomejs.biome",
 	"editor.codeActionsOnSave": {
-    "source.fixAll.biome": "explicit"
-  }
+		"source.fixAll.biome": "explicit"
+	},
+	"tailwindCSS.experimental.classRegex": [
+		// cva() 함수 지원
+		["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+
+		// clsx, cn, twMerge 등 기타 유틸리티 함수 지원
+		["(clsx|cn|twMerge)\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+	]
 }
