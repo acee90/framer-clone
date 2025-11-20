@@ -35,7 +35,7 @@ const items = [
 	{
 		title: "Collaborate",
 		description:
-			"Whether you\U+2019re collaborating on the canvas or editing copy directly on the page, updates are seamless and handoff-free.",
+			"Whether youU+2019re collaborating on the canvas or editing copy directly on the page, updates are seamless and handoff-free.",
 		hash: "feat-collaborate",
 	},
 ];
@@ -88,7 +88,7 @@ export function DesignSection() {
 		const ctx = gsap.context(() => {
 			// boxRef.current (실제 DOM 노드)를 대상으로 애니메이션 설정
 
-			featureRefs.current.forEach((box) =>
+			featureRefs.current.forEach((box) => {
 				gsap.fromTo(
 					box,
 					{
@@ -115,8 +115,8 @@ export function DesignSection() {
 							// markers: true,
 						},
 					},
-				),
-			);
+				);
+			});
 		}, componentRef);
 
 		return () => ctx.revert();

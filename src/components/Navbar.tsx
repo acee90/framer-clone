@@ -200,48 +200,84 @@ export function Navbar() {
 							<div className="mt-8 flex flex-col gap-4">
 								<div className="flex flex-col gap-2">
 									<h3 className="font-semibold">Product</h3>
-									<a href="#" className="text-muted-foreground text-sm">
+									<a
+										href="/product/design"
+										className="text-muted-foreground text-sm"
+									>
 										Design
 									</a>
-									<a href="#" className="text-muted-foreground text-sm">
+									<a
+										href="/product/prototype"
+										className="text-muted-foreground text-sm"
+									>
 										Prototype
 									</a>
-									<a href="#" className="text-muted-foreground text-sm">
+									<a
+										href="/product/collaborate"
+										className="text-muted-foreground text-sm"
+									>
 										Collaborate
 									</a>
-									<a href="#" className="text-muted-foreground text-sm">
+									<a
+										href="/product/publish"
+										className="text-muted-foreground text-sm"
+									>
 										Publish
 									</a>
 								</div>
 
 								<div className="flex flex-col gap-2">
 									<h3 className="font-semibold">Features</h3>
-									<a href="#" className="text-muted-foreground text-sm">
+									<a
+										href="/features/animations"
+										className="text-muted-foreground text-sm"
+									>
 										Animations
 									</a>
-									<a href="#" className="text-muted-foreground text-sm">
+									<a
+										href="/features/components"
+										className="text-muted-foreground text-sm"
+									>
 										Components
 									</a>
-									<a href="#" className="text-muted-foreground text-sm">
+									<a
+										href="/features/cms"
+										className="text-muted-foreground text-sm"
+									>
 										CMS
 									</a>
-									<a href="#" className="text-muted-foreground text-sm">
+									<a
+										href="/features/seo"
+										className="text-muted-foreground text-sm"
+									>
 										SEO
 									</a>
 								</div>
 
 								<div className="flex flex-col gap-2">
 									<h3 className="font-semibold">Resources</h3>
-									<a href="#" className="text-muted-foreground text-sm">
+									<a
+										href="/resources/documentation"
+										className="text-muted-foreground text-sm"
+									>
 										Documentation
 									</a>
-									<a href="#" className="text-muted-foreground text-sm">
+									<a
+										href="/resources/learn"
+										className="text-muted-foreground text-sm"
+									>
 										Learn
 									</a>
-									<a href="#" className="text-muted-foreground text-sm">
+									<a
+										href="/resources/community"
+										className="text-muted-foreground text-sm"
+									>
 										Community
 									</a>
-									<a href="#" className="text-muted-foreground text-sm">
+									<a
+										href="/resources/templates"
+										className="text-muted-foreground text-sm"
+									>
 										Templates
 									</a>
 								</div>

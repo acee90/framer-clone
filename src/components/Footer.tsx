@@ -9,31 +9,31 @@ export function Footer() {
 					<div className="flex flex-col gap-3">
 						<h3 className="font-semibold">Product</h3>
 						<a
-							href="#"
+							href="/product/design"
 							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Design
 						</a>
 						<a
-							href="#"
+							href="/product/prototype"
 							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Prototype
 						</a>
 						<a
-							href="#"
+							href="/product/develop"
 							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Develop
 						</a>
 						<a
-							href="#"
+							href="/product/collaborate"
 							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Collaborate
 						</a>
 						<a
-							href="#"
+							href="/product/publish"
 							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Publish
@@ -44,31 +44,31 @@ export function Footer() {
 					<div className="flex flex-col gap-3">
 						<h3 className="font-semibold">Resources</h3>
 						<a
-							href="#"
+							href="/resources/documentation"
 							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Documentation
 						</a>
 						<a
-							href="#"
+							href="/resources/learn"
 							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Learn
 						</a>
 						<a
-							href="#"
+							href="/resources/blog"
 							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Blog
 						</a>
 						<a
-							href="#"
+							href="/resources/templates"
 							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Templates
 						</a>
 						<a
-							href="#"
+							href="/resources/showcase"
 							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Showcase
@@ -79,25 +79,25 @@ export function Footer() {
 					<div className="flex flex-col gap-3">
 						<h3 className="font-semibold">Company</h3>
 						<a
-							href="#"
+							href="/company/about"
 							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							About
 						</a>
 						<a
-							href="#"
+							href="/company/careers"
 							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Careers
 						</a>
 						<a
-							href="#"
+							href="/company/newsroom"
 							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Newsroom
 						</a>
 						<a
-							href="#"
+							href="/company/contact"
 							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Contact
@@ -108,25 +108,25 @@ export function Footer() {
 					<div className="flex flex-col gap-3">
 						<h3 className="font-semibold">Legal</h3>
 						<a
-							href="#"
+							href="/legal/terms"
 							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Terms
 						</a>
 						<a
-							href="#"
+							href="/legal/privacy"
 							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Privacy
 						</a>
 						<a
-							href="#"
+							href="/legal/cookies"
 							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Cookies
 						</a>
 						<a
-							href="#"
+							href="/legal/licenses"
 							className="text-muted-foreground text-sm hover:text-foreground"
 						>
 							Licenses
@@ -138,28 +138,28 @@ export function Footer() {
 						<h3 className="font-semibold">Community</h3>
 						<div className="flex gap-3">
 							<a
-								href="#"
+								href="https://twitter.com"
 								className="text-muted-foreground transition-colors hover:text-foreground"
 								aria-label="Twitter"
 							>
 								<Twitter className="h-5 w-5" />
 							</a>
 							<a
-								href="#"
+								href="https://github.com"
 								className="text-muted-foreground transition-colors hover:text-foreground"
 								aria-label="GitHub"
 							>
 								<Github className="h-5 w-5" />
 							</a>
 							<a
-								href="#"
+								href="https://youtube.com"
 								className="text-muted-foreground transition-colors hover:text-foreground"
 								aria-label="YouTube"
 							>
 								<Youtube className="h-5 w-5" />
 							</a>
 							<a
-								href="#"
+								href="https://linkedin.com"
 								className="text-muted-foreground transition-colors hover:text-foreground"
 								aria-label="LinkedIn"
 							>

@@ -15,7 +15,7 @@ const _data = [
 		icon: "https://framerusercontent.com/images/4gKZnsOSKARj5SbgbbbF1CNqro.png?width=240&height=240",
 		dot: "Perplexity",
 		description:
-			"“Framer gives us everything we need to move fast. We don’t wait on dev. We don’t compromise on design.”",
+			"\"Framer gives us everything we need to move fast. We don't wait on dev. We don't compromise on design.\"",
 		image: "https://picsum.photos/seed/101/600/600",
 		video: "https://www.pexels.com/ko-kr/download/video/5081433/",
 	},
@@ -24,7 +24,7 @@ const _data = [
 		icon: "https://framerusercontent.com/images/MHx8YZeRYEt84rFq3Xjf510ukFI.png?scale-down-to=512&width=1024&height=762",
 		dot: "Visual Electric",
 		description:
-			"“Launching on Framer was seamless. Live in no time, no friction.”",
+			'"Launching on Framer was seamless. Live in no time, no friction."',
 		image: "https://picsum.photos/seed/102/600/600",
 		video: "https://www.pexels.com/ko-kr/download/video/6394054/",
 	},
@@ -33,7 +33,7 @@ const _data = [
 		icon: "https://framerusercontent.com/images/VVlSsBCZwRNiKHsE4BiCZqBThM.png?width=225&height=225",
 		dot: "Biograph",
 		description:
-			"“Framer gave us full creative freedom. No code limits, no handoffs. We shipped an immersive brand site in days.”",
+			'"Framer gave us full creative freedom. No code limits, no handoffs. We shipped an immersive brand site in days."',
 		image: "https://picsum.photos/seed/103/600/600",
 		video: "https://www.pexels.com/ko-kr/download/video/854053/",
 	},
@@ -42,16 +42,16 @@ const _data = [
 		icon: "https://framerusercontent.com/images/RkwWTf2otULCGv3QEORgS5bH7Eg.png?width=160&height=160",
 		dot: "Cradle",
 		description:
-			"“Framer gives us everything we need to move fast. We don’t wait on dev. We don’t compromise on design.”",
+			"\"Framer gives us everything we need to move fast. We don't wait on dev. We don't compromise on design.\"",
 		image: "https://picsum.photos/seed/104/600/600",
 		video: "https://www.pexels.com/ko-kr/download/video/6394054/",
 	},
 	{
-		id: "4",
+		id: "5",
 		icon: "https://framerusercontent.com/images/f0zD56BWH0z8GfKM9dd8nMsCkc.png?width=240&height=240",
 		dot: "Miro",
 		description:
-			"“With Framer, our designers can ship updates daily. No dev handoff. No staging hassle.”",
+			'"With Framer, our designers can ship updates daily. No dev handoff. No staging hassle."',
 		image: "https://picsum.photos/seed/105/600/600",
 		video: "https://www.pexels.com/ko-kr/download/video/1536315/",
 	},
@@ -91,7 +91,7 @@ function SlideItem({
 		>
 			<div className="flex flex-col justify-between gap-y-10 p-15">
 				<div className="aspect-square w-[60px] overflow-hidden rounded-lg">
-					<img src={data.icon} />
+					<img src={data.icon} alt={data.dot} />
 				</div>
 				<p className="pr-15 font-semibold text-3xl">{data.description}</p>
 				<div>
@@ -109,6 +109,7 @@ function SlideItem({
 				<img
 					className="absolute top-0 left-0 z-1 h-full w-full animate-out object-cover transition-[scale,opacity] duration-500 group-hover:scale-105 group-hover:opacity-75"
 					src={data.image}
+					alt=""
 				/>
 				<div className="z-10 h-[300px] w-[480px] overflow-hidden rounded-md">
 					<video
@@ -116,6 +117,7 @@ function SlideItem({
 						ref={videoRef}
 						src={data.video}
 						loop
+						muted
 					/>
 				</div>
 			</div>
@@ -148,8 +150,8 @@ export function SliderSection() {
 			<div className="embla">
 				<div className="embla__viewport" ref={emblaRef}>
 					<div className="embla__container">
-						{_data.map((data, index) => (
-							<div className="embla__slide" key={index}>
+						{_data.map((data) => (
+							<div className="embla__slide" key={data.id}>
 								<SlideItem data={data} />
 							</div>
 						))}
@@ -159,9 +161,10 @@ export function SliderSection() {
 					<div className="container relative mt-10 flex items-center">
 						<div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 flex items-center gap-4">
 							{_data.map(({ dot }, index) => (
-								<div
-									key={index}
+								<button
+									key={dot}
 									onClick={() => onDotButtonClick(index)}
+									type="button"
 									className={cn(
 										"cursor-pointer font-semibold text-[14px] opacity-60 transition-opacity",
 										{
@@ -170,7 +173,7 @@ export function SliderSection() {
 									)}
 								>
 									{dot}
-								</div>
+								</button>
 							))}
 						</div>
 

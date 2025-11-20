@@ -44,10 +44,10 @@ export function ExpertSection() {
 				<Carousel setApi={setApi} className="w-full" opts={{ loop: true }}>
 					<CarouselContent>
 						{Array.from({ length: 2 }).map((_, index) => (
-							<CarouselItem key={index}>
+							<CarouselItem key={`slide-${index}`}>
 								<div className="grid w-full grid-cols-4 gap-2">
 									{Array.from({ length: 4 }).map((_, i) => (
-										<Card>
+										<Card key={`card-${index}-${i}`}>
 											<CardContent className="flex aspect-4/3 items-center justify-center p-6">
 												<span className="font-semibold text-4xl">
 													{index * 4 + i + 1}
@@ -63,7 +63,8 @@ export function ExpertSection() {
 						<div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 flex justify-center gap-2 py-2">
 							{Array.from({ length: count }).map((_, index) => (
 								<button
-									key={index}
+									key={`dot-${index}`}
+									type="button"
 									onClick={() => api?.scrollTo(index)}
 									className={cn(
 										"size-2 cursor-pointer rounded-full bg-primary opacity-60 transition-opacity",
