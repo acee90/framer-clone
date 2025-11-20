@@ -3,7 +3,7 @@ pre-commit:
     # 1. Biome으로 빠른 린팅/포맷팅 실행 (스테이징된 파일 대상)
     lint:
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
-      run: npx @biomejs/biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
+      run: bunx @biomejs/biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
       stage_fixed: true
 
 pre-push:
