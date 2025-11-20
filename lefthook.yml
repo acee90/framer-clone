@@ -10,4 +10,4 @@ pre-push:
   commands:
     # 빌드 및 타입 체크
     build:
-      run: npm run build
+      run: bun run build
