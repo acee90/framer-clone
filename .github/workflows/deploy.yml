@@ -30,15 +30,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Set up Node
-        uses: actions/setup-node@v4
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: lts/*
-          cache: "npm"
+          bun-version: latest
       - name: Install dependencies
-        run: npm ci
+        run: bun install --frozen-lockfile
       - name: Build
-        run: npm run build # 👈 1. 빌드가 완료되면 'dist' 폴더가 생성됩니다.
+        run: bun run build # 👈 1. 빌드가 완료되면 'dist' 폴더가 생성됩니다.
 
       # ❗️ 2. 이 단계를 추가했습니다!
       #    'dist' 폴더 안의 index.html을 404.html로 복사합니다.
