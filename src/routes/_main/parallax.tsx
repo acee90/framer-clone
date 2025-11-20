@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import ParallaxComponent from "@/components/parallax-gemini";
 
-export const Route = createFileRoute("/parallax")({
+export const Route = createFileRoute("/_main/parallax")({
 	component: RouteComponent,
 });
 

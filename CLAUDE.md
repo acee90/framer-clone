@@ -53,7 +53,7 @@ Configured in:
 
 ### Styling
 - **Tailwind CSS v4** is used via `@tailwindcss/vite` plugin
-- Main styles in `src/index.css`
+- Main styles in `src/global.css`
 - Uses CSS variables for theming (configured in components.json)
 - Base color: neutral
 - Icon library: lucide-react

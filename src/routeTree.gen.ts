@@ -9,153 +9,253 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as AboutRouteImport } from './routes/about'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as ParallaxRouteImport } from './routes/parallax'
-import { Route as ScrollTriggerRouteImport } from './routes/scroll-trigger'
-import { Route as StoriesRouteImport } from './routes/stories'
-import { Route as TestRouteImport } from './routes/test'
+import { Route as AuthAbcRouteImport } from './routes/_auth/abc'
+import { Route as AuthLoginRouteImport } from './routes/_auth/login'
+import { Route as AuthRouteRouteImport } from './routes/_auth/route'
+import { Route as MainAboutRouteImport } from './routes/_main/about'
+import { Route as MainIndexRouteImport } from './routes/_main/index'
+import { Route as MainParallaxRouteImport } from './routes/_main/parallax'
+import { Route as MainRouteRouteImport } from './routes/_main/route'
+import { Route as MainScrollTriggerRouteImport } from './routes/_main/scroll-trigger'
+import { Route as MainStoriesRouteImport } from './routes/_main/stories'
+import { Route as MainTestRouteImport } from './routes/_main/test'
 
-const TestRoute = TestRouteImport.update({
-  id: '/test',
-  path: '/test',
+const MainRouteRoute = MainRouteRouteImport.update({
+  id: '/_main',
   getParentRoute: () => rootRouteImport,
 } as any)
-const StoriesRoute = StoriesRouteImport.update({
-  id: '/stories',
-  path: '/stories',
+const AuthRouteRoute = AuthRouteRouteImport.update({
+  id: '/_auth',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ScrollTriggerRoute = ScrollTriggerRouteImport.update({
-  id: '/scroll-trigger',
-  path: '/scroll-trigger',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ParallaxRoute = ParallaxRouteImport.update({
-  id: '/parallax',
-  path: '/parallax',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IndexRoute = IndexRouteImport.update({
+const MainIndexRoute = MainIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => MainRouteRoute,
+} as any)
+const MainTestRoute = MainTestRouteImport.update({
+  id: '/test',
+  path: '/test',
+  getParentRoute: () => MainRouteRoute,
+} as any)
+const MainStoriesRoute = MainStoriesRouteImport.update({
+  id: '/stories',
+  path: '/stories',
+  getParentRoute: () => MainRouteRoute,
+} as any)
+const MainScrollTriggerRoute = MainScrollTriggerRouteImport.update({
+  id: '/scroll-trigger',
+  path: '/scroll-trigger',
+  getParentRoute: () => MainRouteRoute,
+} as any)
+const MainParallaxRoute = MainParallaxRouteImport.update({
+  id: '/parallax',
+  path: '/parallax',
+  getParentRoute: () => MainRouteRoute,
+} as any)
+const MainAboutRoute = MainAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => MainRouteRoute,
+} as any)
+const AuthLoginRoute = AuthLoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => AuthRouteRoute,
+} as any)
+const AuthAbcRoute = AuthAbcRouteImport.update({
+  id: '/abc',
+  path: '/abc',
+  getParentRoute: () => AuthRouteRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/parallax': typeof ParallaxRoute
-  '/scroll-trigger': typeof ScrollTriggerRoute
-  '/stories': typeof StoriesRoute
-  '/test': typeof TestRoute
+  '/abc': typeof AuthAbcRoute
+  '/login': typeof AuthLoginRoute
+  '/about': typeof MainAboutRoute
+  '/parallax': typeof MainParallaxRoute
+  '/scroll-trigger': typeof MainScrollTriggerRoute
+  '/stories': typeof MainStoriesRoute
+  '/test': typeof MainTestRoute
+  '/': typeof MainIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/parallax': typeof ParallaxRoute
-  '/scroll-trigger': typeof ScrollTriggerRoute
-  '/stories': typeof StoriesRoute
-  '/test': typeof TestRoute
+  '/abc': typeof AuthAbcRoute
+  '/login': typeof AuthLoginRoute
+  '/about': typeof MainAboutRoute
+  '/parallax': typeof MainParallaxRoute
+  '/scroll-trigger': typeof MainScrollTriggerRoute
+  '/stories': typeof MainStoriesRoute
+  '/test': typeof MainTestRoute
+  '/': typeof MainIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/parallax': typeof ParallaxRoute
-  '/scroll-trigger': typeof ScrollTriggerRoute
-  '/stories': typeof StoriesRoute
-  '/test': typeof TestRoute
+  '/_auth': typeof AuthRouteRouteWithChildren
+  '/_main': typeof MainRouteRouteWithChildren
+  '/_auth/abc': typeof AuthAbcRoute
+  '/_auth/login': typeof AuthLoginRoute
+  '/_main/about': typeof MainAboutRoute
+  '/_main/parallax': typeof MainParallaxRoute
+  '/_main/scroll-trigger': typeof MainScrollTriggerRoute
+  '/_main/stories': typeof MainStoriesRoute
+  '/_main/test': typeof MainTestRoute
+  '/_main/': typeof MainIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
+    | '/abc'
+    | '/login'
     | '/about'
     | '/parallax'
     | '/scroll-trigger'
     | '/stories'
     | '/test'
+    | '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/parallax' | '/scroll-trigger' | '/stories' | '/test'
+  to:
+    | '/abc'
+    | '/login'
+    | '/about'
+    | '/parallax'
+    | '/scroll-trigger'
+    | '/stories'
+    | '/test'
+    | '/'
   id:
     | '__root__'
-    | '/'
-    | '/about'
-    | '/parallax'
-    | '/scroll-trigger'
-    | '/stories'
-    | '/test'
+    | '/_auth'
+    | '/_main'
+    | '/_auth/abc'
+    | '/_auth/login'
+    | '/_main/about'
+    | '/_main/parallax'
+    | '/_main/scroll-trigger'
+    | '/_main/stories'
+    | '/_main/test'
+    | '/_main/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  ParallaxRoute: typeof ParallaxRoute
-  ScrollTriggerRoute: typeof ScrollTriggerRoute
-  StoriesRoute: typeof StoriesRoute
-  TestRoute: typeof TestRoute
+  AuthRouteRoute: typeof AuthRouteRouteWithChildren
+  MainRouteRoute: typeof MainRouteRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/test': {
-      id: '/test'
-      path: '/test'
-      fullPath: '/test'
-      preLoaderRoute: typeof TestRouteImport
+    '/_main': {
+      id: '/_main'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof MainRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/stories': {
-      id: '/stories'
-      path: '/stories'
-      fullPath: '/stories'
-      preLoaderRoute: typeof StoriesRouteImport
+    '/_auth': {
+      id: '/_auth'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof AuthRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/scroll-trigger': {
-      id: '/scroll-trigger'
-      path: '/scroll-trigger'
-      fullPath: '/scroll-trigger'
-      preLoaderRoute: typeof ScrollTriggerRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/parallax': {
-      id: '/parallax'
-      path: '/parallax'
-      fullPath: '/parallax'
-      preLoaderRoute: typeof ParallaxRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/': {
-      id: '/'
+    '/_main/': {
+      id: '/_main/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof MainIndexRouteImport
+      parentRoute: typeof MainRouteRoute
+    }
+    '/_main/test': {
+      id: '/_main/test'
+      path: '/test'
+      fullPath: '/test'
+      preLoaderRoute: typeof MainTestRouteImport
+      parentRoute: typeof MainRouteRoute
+    }
+    '/_main/stories': {
+      id: '/_main/stories'
+      path: '/stories'
+      fullPath: '/stories'
+      preLoaderRoute: typeof MainStoriesRouteImport
+      parentRoute: typeof MainRouteRoute
+    }
+    '/_main/scroll-trigger': {
+      id: '/_main/scroll-trigger'
+      path: '/scroll-trigger'
+      fullPath: '/scroll-trigger'
+      preLoaderRoute: typeof MainScrollTriggerRouteImport
+      parentRoute: typeof MainRouteRoute
+    }
+    '/_main/parallax': {
+      id: '/_main/parallax'
+      path: '/parallax'
+      fullPath: '/parallax'
+      preLoaderRoute: typeof MainParallaxRouteImport
+      parentRoute: typeof MainRouteRoute
+    }
+    '/_main/about': {
+      id: '/_main/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof MainAboutRouteImport
+      parentRoute: typeof MainRouteRoute
+    }
+    '/_auth/login': {
+      id: '/_auth/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof AuthLoginRouteImport
+      parentRoute: typeof AuthRouteRoute
+    }
+    '/_auth/abc': {
+      id: '/_auth/abc'
+      path: '/abc'
+      fullPath: '/abc'
+      preLoaderRoute: typeof AuthAbcRouteImport
+      parentRoute: typeof AuthRouteRoute
     }
   }
 }
 
+interface AuthRouteRouteChildren {
+  AuthAbcRoute: typeof AuthAbcRoute
+  AuthLoginRoute: typeof AuthLoginRoute
+}
+
+const AuthRouteRouteChildren: AuthRouteRouteChildren = {
+  AuthAbcRoute: AuthAbcRoute,
+  AuthLoginRoute: AuthLoginRoute,
+}
+
+const AuthRouteRouteWithChildren = AuthRouteRoute._addFileChildren(
+  AuthRouteRouteChildren,
+)
+
+interface MainRouteRouteChildren {
+  MainAboutRoute: typeof MainAboutRoute
+  MainParallaxRoute: typeof MainParallaxRoute
+  MainScrollTriggerRoute: typeof MainScrollTriggerRoute
+  MainStoriesRoute: typeof MainStoriesRoute
+  MainTestRoute: typeof MainTestRoute
+  MainIndexRoute: typeof MainIndexRoute
+}
+
+const MainRouteRouteChildren: MainRouteRouteChildren = {
+  MainAboutRoute: MainAboutRoute,
+  MainParallaxRoute: MainParallaxRoute,
+  MainScrollTriggerRoute: MainScrollTriggerRoute,
+  MainStoriesRoute: MainStoriesRoute,
+  MainTestRoute: MainTestRoute,
+  MainIndexRoute: MainIndexRoute,
+}
+
+const MainRouteRouteWithChildren = MainRouteRoute._addFileChildren(
+  MainRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  ParallaxRoute: ParallaxRoute,
-  ScrollTriggerRoute: ScrollTriggerRoute,
-  StoriesRoute: StoriesRoute,
-  TestRoute: TestRoute,
+  AuthRouteRoute: AuthRouteRouteWithChildren,
+  MainRouteRoute: MainRouteRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

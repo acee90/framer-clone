@@ -180,8 +180,11 @@ export function Navbar() {
 						<Button variant="ghost" size="sm" className="px-0!">
 							Sign in
 						</Button>
-						<Button className="h-auto! rounded-full bg-white px-3 py-2 text-black leading-none hover:bg-white hover:opacity-80">
-							Sign up
+						<Button
+							className="h-auto! rounded-full bg-white px-3 py-2 text-black leading-none hover:bg-white hover:opacity-80"
+							asChild
+						>
+							<Link to="/login">Sign up</Link>
 						</Button>
 					</div>
 

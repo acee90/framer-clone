@@ -13,5 +13,9 @@
 
 		// clsx, cn, twMerge 등 기타 유틸리티 함수 지원
 		["(clsx|cn|twMerge)\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
-	]
+	],
+	"[xml]": {
+		"editor.defaultFormatter": "redhat.vscode-xml"
+	},
+	"terminal.integrated.localEchoEnabled": "on"
 }

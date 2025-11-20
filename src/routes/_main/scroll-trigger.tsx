@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 
-export const Route = createFileRoute("/scroll-trigger")({
+export const Route = createFileRoute("/_main/scroll-trigger")({
 	component: ScrubExample,
 });
 

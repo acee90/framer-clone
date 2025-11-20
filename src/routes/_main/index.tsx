@@ -9,7 +9,7 @@ import { CommunitySection } from "@/components/section/community";
 import TypingDeleteLoop from "@/components/typing-loop";
 import { Button } from "@/components/ui/button";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/_main/")({
 	component: HomeComponent,
 });
 
@@ -22,7 +22,7 @@ function HomeComponent() {
 	];
 
 	return (
-		<>
+		<main className="flex-1 pb-20">
 			{/* Hero Section */}
 			<section className="container mx-auto py-24 pb-[100px] md:pt-20">
 				<div className="mx-auto flex max-w-4xl flex-col items-center gap-5">
@@ -61,6 +61,6 @@ function HomeComponent() {
 			<SliderSection />
 			<ExpertSection />
 			<CommunitySection />
-		</>
+		</main>
 	);
 }
