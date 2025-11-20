@@ -11,7 +11,7 @@ export interface MarqueeItem {
 }
 
 function MarqueeContent({ data }: { data: MarqueeItem[] }) {
-	return data.map((v, index) => {
+	return data.map((v, _index) => {
 		const bgUrl1 = `https://picsum.photos/id/${200 + v.id * 2}/360/270`;
 		const bgUrl2 = `https://picsum.photos/id/${200 + v.id * 2 + 1}/360/270`;
 		return (

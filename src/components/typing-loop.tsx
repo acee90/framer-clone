@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
-import React, { useLayoutEffect, useRef } from "react";
+import type React from "react";
+import { useLayoutEffect, useRef } from "react";
 
 // CSS 파일을 import하는 대신 Tailwind 클래스를 JSX에 직접 사용합니다.
 
